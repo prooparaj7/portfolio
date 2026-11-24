@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rooparaj P – Portfolio</title>
+<meta name="description" content="Portfolio of Rooparaj P, B.E. CSE (AI) student at Sathyabama and builder of AquaWatch AI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Scroll gauge: fills like a water tank as you read -->
+<div class="gauge" aria-hidden="true"><div class="gauge-fill" id="gaugeFill"></div></div>
+
+<header class="nav">
+  <a href="#home" class="logo">Rooparaj P</a>
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="links">Menu</button>
+  <nav id="links" class="links">
+    <a href="#home">Home</a>
+    <a href="#about">About Me</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Technical Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    <button id="themeBtn" class="theme-btn" aria-label="Switch to dark theme">Dark</button>
+  </nav>
+</header>
+
+<main>
+  <section id="home" class="hero">
+    <div class="wrap">
+      <p class="hello">Hi, I'm</p>
+      <h1>Rooparaj P</h1>
+      <p class="role">I build <span id="typed" aria-live="polite">AI chatbots</span><span class="caret" aria-hidden="true">|</span></p>
+      <p class="lead">CSE (AI) student at Sathyabama, building AI that helps people use water more wisely.</p>
+      <div class="cta">
+        <a class="btn primary" href="#projects">See my project</a>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
+    </div>
+    <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,60 C240,120 480,0 720,50 C960,100 1200,10 1440,60 L1440,120 L0,120 Z"/>
+    </svg>
+  </section>
+
+  <section id="about" class="sec">
+    <div class="wrap two">
+      <h2>About Me</h2>
+      <div>
+        <p>I'm a B.E. Computer Science and Engineering (AI) student at Sathyabama. I like turning ideas into working software, from chatbots to a system that spots water wastage before it becomes a problem.</p>
+        <p>My chatbot work took me to the India Book of Records event, which pushed me to keep building things people can actually use.</p>
+        <ul class="facts">
+          <li><strong>Studying</strong> B.E. CSE (AI), 3rd semester</li>
+          <li><strong>Built</strong> AquaWatch AI</li>
+          <li><strong>Interested in</strong> AI, IoT, web development</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="sec alt">
+    <div class="wrap">
+      <h2>Education</h2>
+      <ol class="timeline">
+        <li>
+          <h3>B.E. CSE (Artificial Intelligence)</h3>
+          <p>Sathyabama · Currently in 3rd semester</p>
+          <span class="chip">CGPA 7.28</span>
+        </li>
+        <li>
+          <h3>Class 12 (CBSE)</h3>
+          <p>Achyuta Public School</p>
+          <span class="chip">58.2%</span>
+        </li>
+        <li>
+          <h3>Class 10 (CBSE)</h3>
+          <p>Parvathy's Anugrahaa International School</p>
+          <span class="chip">67.6%</span>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="skills" class="sec">
+    <div class="wrap">
+      <h2>Technical Skills</h2>
+      <div class="tabs" role="tablist" aria-label="Skill categories">
+        <button class="tab active" role="tab" data-filter="all" aria-selected="true">All</button>
+        <button class="tab" role="tab" data-filter="web" aria-selected="false">Web</button>
+        <button class="tab" role="tab" data-filter="ai" aria-selected="false">AI</button>
+        <button class="tab" role="tab" data-filter="tools" aria-selected="false">Tools</button>
+      </div>
+      <ul class="skills" id="skillList">
+        <li data-cat="web"><span>HTML</span><i style="--lvl:80%"></i></li>
+        <li data-cat="web"><span>CSS</span><i style="--lvl:70%"></i></li>
+        <li data-cat="web"><span>JavaScript</span><i style="--lvl:60%"></i></li>
+        <li data-cat="ai"><span>Python</span><i style="--lvl:70%"></i></li>
+        <li data-cat="ai"><span>Chatbot development</span><i style="--lvl:75%"></i></li>
+        <li data-cat="ai"><span>Machine learning basics</span><i style="--lvl:55%"></i></li>
+        <li data-cat="tools"><span>ESP32 sensors</span><i style="--lvl:60%"></i></li>
+        <li data-cat="tools"><span>Git and GitHub</span><i style="--lvl:60%"></i></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects" class="sec alt">
+    <div class="wrap">
+      <h2>Projects</h2>
+      <article class="project">
+        <div class="proj-head">
+          <h3>AquaWatch AI</h3>
+          <p>AI-based water wastage detection and management system</p>
+        </div>
+        <p>A system that watches water use, flags unusual flow and sends alerts so leaks and overuse are caught early. It pairs a website dashboard with ESP32 sensors.</p>
+        <button class="more" id="moreBtn" aria-expanded="false" aria-controls="projMore">Show details</button>
+        <div id="projMore" class="proj-more" hidden>
+          <ul>
+            <li>ESP32 sensors collect water-flow readings.</li>
+            <li>AI flags readings that look like wastage.</li>
+            <li>The website shows usage and sends alerts.</li>
+          </ul>
+        </div>
+        <div class="tags"><span>AI</span><span>ESP32</span><span>Web</span><span>Alerts</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="contact" class="sec">
+    <div class="wrap two">
+      <div>
+        <h2>Contact</h2>
+        <p>Have an idea, an internship, or a project to build? Send a message.</p>
+        <ul class="contact-list">
+          <li><a href="mailto:prooparajoffical07@gmail.com">prooparajoffical07@gmail.com</a></li>
+          <li><a href="tel:+919363627201">+91 93636 27201</a></li>
+          <li><a href="https://www.linkedin.com/in/rooparaj-p-22a2603a9/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/prooparaj7" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+      <form id="contactForm" novalidate>
+        <label for="name">Name</label>
+        <input id="name" name="name" autocomplete="name" required>
+        <small class="err" id="nameErr"></small>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required>
+        <small class="err" id="emailErr"></small>
+        <label for="msg">Message</label>
+        <textarea id="msg" name="msg" rows="5" required></textarea>
+        <small class="err" id="msgErr"></small>
+        <button class="btn primary" type="submit">Send message</button>
+        <p class="status" id="status" role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="foot"><p>© <span id="year"></span> Rooparaj P</p><a href="#home">Back to top</a></footer>
+
+<script src="script.js"></script>
+</body>
+</html>
